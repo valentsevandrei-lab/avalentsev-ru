@@ -2,123 +2,130 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>avalentsev.ru — только почта / email only</title>
+    <title>avalentsev.ru — почтовый домен</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="Этот домен используется только для почты / This domain is for email only">
+    <meta name="description" content="Почтовый домен. Сайт отсутствует.">
     <style>
+        /* Сброс и база — в стиле b2btext.ru */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.4;
+            padding: 2rem;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
         }
-        .card {
-            background: white;
-            border-radius: 32px;
-            padding: 48px 40px;
-            max-width: 560px;
+
+        /* Контейнер — узкий, как на основном сайте */
+        .container {
+            max-width: 640px;
             width: 100%;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            margin: 0 auto;
         }
-        .icon {
-            font-size: 64px;
-            margin-bottom: 16px;
+
+        /* Тонкая линия сверху — как на b2btext.ru */
+        .top-line {
+            width: 80px;
+            height: 2px;
+            background-color: #111;
+            margin-bottom: 2rem;
         }
+
         h1 {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 500;
             letter-spacing: -0.02em;
-            color: #1a1a2e;
-            margin-bottom: 8px;
+            margin-bottom: 1.5rem;
+            color: #111;
         }
-        .h1-en {
-            font-size: 14px;
-            font-weight: normal;
-            color: #94a3b8;
-            margin-bottom: 24px;
-        }
+
         .subtitle {
-            font-size: 18px;
-            color: #4a5568;
-            margin-bottom: 8px;
-            line-height: 1.5;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1.8rem;
+            border-left: 2px solid #111;
+            padding-left: 1rem;
         }
-        .subtitle-en {
-            font-size: 14px;
-            color: #94a3b8;
-            margin-bottom: 32px;
+
+        .email-note {
+            background-color: #f7f7f7;
+            padding: 1.25rem;
+            margin: 1.8rem 0;
+            font-size: 0.9rem;
+            border-left: 2px solid #ccc;
         }
-        hr {
-            border: none;
-            border-top: 2px dashed #e2e8f0;
-            margin: 32px 0;
+
+        .legal {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+            text-align: left;
         }
-        .note {
-            background: #f7fafc;
-            border-radius: 16px;
-            padding: 20px;
-            font-size: 15px;
-            color: #4a5568;
-            line-height: 1.5;
+
+        .separator {
+            margin: 1rem 0;
+            color: #ddd;
         }
-        .note-en {
-            font-size: 13px;
-            color: #94a3b8;
-            margin-top: 6px;
+
+        a {
+            color: #111;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
         }
-        .footer {
-            margin-top: 24px;
-            font-size: 12px;
-            color: #a0aec0;
+
+        /* Английский перевод — мелко, неброско */
+        .en {
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 0.25rem;
         }
-        .footer-en {
-            font-size: 11px;
-            color: #cbd5e1;
-            margin-top: 4px;
+
+        strong {
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="icon">📬</div>
-        
-        <h1>Сайта здесь нет<br>и не планируется</h1>
-        <div class="h1-en">No website here, and none planned</div>
-        
-        <div class="subtitle">
-            Но почта <strong>работает</strong> исправно.<br>
-            Письма доходят без задержек.
-        </div>
-        <div class="subtitle-en">
-            But email works just fine. Messages arrive without delay.
-        </div>
-        
-        <hr>
-        
-        <div class="note">
-            Этот домен используется только для почты.<br>
-            Если вы видите эту страницу — всё настроено верно.
-            <div class="note-en">
-                This domain is for email only. If you see this page — everything is configured correctly.
-            </div>
-        </div>
-        
-        <div class="footer">
-            — просто заглушка, чтобы вы знали —
-        </div>
-        <div class="footer-en">
-            — just a placeholder so you know —
-        </div>
+<div class="container">
+    <div class="top-line"></div>
+
+    <h1>Сайта здесь нет<br>и не планируется</h1>
+    <div class="en">No website here, and none planned</div>
+
+    <div class="subtitle">
+        Но почта работает исправно.<br>
+        Письма доходят без задержек.
     </div>
+    <div class="en">But email works just fine. Messages arrive without delay.</div>
+
+    <div class="email-note">
+        Этот домен используется только для почты.
+        <div class="en">This domain is for email only.</div>
+        <div class="separator"></div>
+        Почтовый сервер соответствует требованиям 152-ФЗ.
+        <div class="en">The mail server complies with Russian Federal Law No. 152-FZ.</div>
+    </div>
+
+    <div class="legal">
+        Если вы видите эту страницу — всё настроено верно.<br>
+        <span class="en">If you see this page — everything is configured correctly.</span>
+        <br><br>
+        — просто техническая заглушка, чтобы вы знали —<br>
+        <span class="en">— just a technical placeholder —</span>
+    </div>
+</div>
 </body>
 </html>

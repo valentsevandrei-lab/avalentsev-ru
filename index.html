@@ -7,7 +7,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="Почтовый домен. Сайт отсутствует.">
     <style>
-        /* Сброс и база — в стиле рабочего сайта */
+        /* Базовые сбросы */
         * {
             margin: 0;
             padding: 0;
@@ -33,7 +33,7 @@
             margin: 0 auto;
         }
 
-        /* Тонкая линия сверху — как на b2btext.ru */
+        /* Тонкая линия сверху */
         .top-line {
             width: 80px;
             height: 2px;
@@ -79,13 +79,6 @@
             color: #ddd;
         }
 
-        a {
-            color: #111;
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 2px;
-        }
-
         /* Английский перевод — мелко, неброско */
         .en {
             font-size: 0.75rem;
@@ -93,8 +86,20 @@
             margin-top: 0.25rem;
         }
 
-        strong {
-            font-weight: 500;
+        /* Мобильные уточнения */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .email-note {
+                padding: 1rem;
+            }
         }
     </style>
 </head>

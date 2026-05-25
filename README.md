@@ -1,2 +1,2 @@
 # avalentsev-ru
-Сайт-заглушка для домена avalentsev.ru
+Заглушка для домена avalentsev.ru

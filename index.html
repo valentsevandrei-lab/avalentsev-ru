@@ -82,6 +82,11 @@
             margin-top: 0.25rem;
         }
 
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 1rem;
@@ -119,17 +124,61 @@
         <div class="en">The mail server complies with Russian Federal Law No. 152-FZ.</div>
     </div>
 
+    <!-- Терминальный блок вместо мониторинга -->
+    <div style="margin-top: 2rem;">
+        <div style="font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; font-size: 0.75rem; background-color: #fafafa; padding: 1rem; border-radius: 6px; color: #222;">
+            <div id="termLine1"></div>
+            <div id="termLine2"></div>
+            <div id="termLine3"></div>
+            <div style="display: flex; align-items: center; gap: 4px; margin-top: 8px;">
+                <span>$</span>
+                <span id="termCursor" style="display: inline-block; width: 8px; height: 1em; background-color: #222; animation: blink 1s step-end infinite;"></span>
+            </div>
+        </div>
+    </div>
+
     <div class="legal">
-        <span style="display: inline-block; width: 8px; height: 8px; background-color: #2ecc71; border-radius: 50%; margin-right: 6px; vertical-align: middle;"></span>
-        <span>Мониторинг почтового сервера: активен</span>
-        <div class="en">Mail server monitoring: active</div>
-        <br>
         <span>🍪 Куки? Нет. Согласий? Нет. Трекеров? Вообще ноль. За вами никто не смотрит. Честно!</span><br>
-        <span class="en">🍪 Cookies? No. Consent? No. Trackers? Absolutely zero.</span>
+        <span class="en">🍪 Cookies? No. Consent? No. Trackers? Absolutely zero. No one is watching you. Promise!</span>
         <br><br>
         <span>— просто техническая заглушка, которая не знает, кто вы. И не хочет знать. —</span><br>
         <span class="en">— just a technical placeholder that doesn't know who you are. And doesn't want to. —</span>
     </div>
 </div>
+
+<script>
+    (function() {
+        const lines = [
+            'Исходящая почта: доступна →',
+            'Входящая почта: доступна →',
+            'Слежение за пользователем: нет →'
+        ];
+        
+        let currentLine = 0;
+        let currentChar = 0;
+        
+        function typeNext() {
+            if (currentLine >= lines.length) return;
+            
+            const lineElement = document.getElementById('termLine' + (currentLine + 1));
+            if (!lineElement) return;
+            
+            const fullLine = lines[currentLine];
+            
+            if (currentChar < fullLine.length) {
+                lineElement.textContent += fullLine.charAt(currentChar);
+                currentChar++;
+                setTimeout(typeNext, 30);
+            } else {
+                currentLine++;
+                currentChar = 0;
+                setTimeout(typeNext, 80);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', typeNext);
+    })();
+</script>
+
 </body>
 </html>

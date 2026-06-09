@@ -124,7 +124,7 @@
         <div class="en">The mail server complies with Russian Federal Law No. 152-FZ.</div>
     </div>
 
-    <!-- Терминальный блок вместо мониторинга -->
+    <!-- Терминальный блок с эффектом печати -->
     <div style="margin-top: 2rem;">
         <div style="font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; font-size: 0.75rem; background-color: #fafafa; padding: 1rem; border-radius: 6px; color: #222;">
             <div id="termLine1"></div>
@@ -153,30 +153,27 @@
             'Входящая почта: доступна →',
             'Слежение за пользователем: нет →'
         ];
-        
-        let currentLine = 0;
-        let currentChar = 0;
-        
-        function typeNext() {
-            if (currentLine >= lines.length) return;
-            
-            const lineElement = document.getElementById('termLine' + (currentLine + 1));
-            if (!lineElement) return;
-            
-            const fullLine = lines[currentLine];
-            
-            if (currentChar < fullLine.length) {
-                lineElement.textContent += fullLine.charAt(currentChar);
-                currentChar++;
-                setTimeout(typeNext, 30);
+
+        let lineIdx = 0;
+        let charIdx = 0;
+
+        function type() {
+            if (lineIdx >= lines.length) return;
+
+            const el = document.getElementById('termLine' + (lineIdx + 1));
+
+            if (charIdx < lines[lineIdx].length) {
+                el.textContent += lines[lineIdx][charIdx];
+                charIdx++;
+                setTimeout(type, 15);
             } else {
-                currentLine++;
-                currentChar = 0;
-                setTimeout(typeNext, 80);
+                lineIdx++;
+                charIdx = 0;
+                setTimeout(type, 80);
             }
         }
-        
-        document.addEventListener('DOMContentLoaded', typeNext);
+
+        type();
     })();
 </script>
 
